@@ -1,0 +1,27 @@
+[2026-03-18T11:10:21.098+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Manar_Retail_Warehouse_V1.build_retail_data_warehouse manual__2026-03-18T11:10:18.478272+00:00 [queued]>
+[2026-03-18T11:10:21.112+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Manar_Retail_Warehouse_V1.build_retail_data_warehouse manual__2026-03-18T11:10:18.478272+00:00 [queued]>
+[2026-03-18T11:10:21.113+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 2
+[2026-03-18T11:10:21.139+0000] {taskinstance.py:1382} INFO - Executing <Task(PythonOperator): build_retail_data_warehouse> on 2026-03-18 11:10:18.478272+00:00
+[2026-03-18T11:10:21.148+0000] {standard_task_runner.py:57} INFO - Started process 139 to run task
+[2026-03-18T11:10:21.156+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'Manar_Retail_Warehouse_V1', 'build_retail_data_warehouse', 'manual__2026-03-18T11:10:18.478272+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/DAG.py', '--cfg-path', '/tmp/tmp4aqa9zzq']
+[2026-03-18T11:10:21.163+0000] {standard_task_runner.py:85} INFO - Job 22: Subtask build_retail_data_warehouse
+[2026-03-18T11:10:21.584+0000] {task_command.py:416} INFO - Running <TaskInstance: Manar_Retail_Warehouse_V1.build_retail_data_warehouse manual__2026-03-18T11:10:18.478272+00:00 [running]> on host ***-worker
+[2026-03-18T11:10:22.129+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Manar_ALtyp' AIRFLOW_CTX_DAG_ID='Manar_Retail_Warehouse_V1' AIRFLOW_CTX_TASK_ID='build_retail_data_warehouse' AIRFLOW_CTX_EXECUTION_DATE='2026-03-18T11:10:18.478272+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-03-18T11:10:18.478272+00:00'
+[2026-03-18T11:10:22.132+0000] {logging_mixin.py:154} INFO - Warning: File sales_2025_01.csv not found!
+[2026-03-18T11:10:22.134+0000] {logging_mixin.py:154} INFO - Warning: File sales_2025_02.csv not found!
+[2026-03-18T11:10:22.135+0000] {logging_mixin.py:154} INFO - Warning: File sales_2025_03.csv not found!
+[2026-03-18T11:10:22.136+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 192, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.11/site-packages/airflow/operators/python.py", line 209, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/DAG.py", line 24, in run_retail_etl_process
+    raise Exception("No CSV files found to process!")
+Exception: No CSV files found to process!
+[2026-03-18T11:10:22.209+0000] {taskinstance.py:1400} INFO - Marking task as UP_FOR_RETRY. dag_id=Manar_Retail_Warehouse_V1, task_id=build_retail_data_warehouse, execution_date=20260318T111018, start_date=20260318T111021, end_date=20260318T111022
+[2026-03-18T11:10:22.237+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 22 for task build_retail_data_warehouse (No CSV files found to process!; 139)
+[2026-03-18T11:10:22.291+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2026-03-18T11:10:22.446+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
