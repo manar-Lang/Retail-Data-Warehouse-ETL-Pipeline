@@ -462,7 +462,7 @@ All rights reserved — you may not use, copy, modify, or distribute this code w
 **Manar Altyp**  
 *Data Engineer • ETL Specialist • BI Developer*
 
-🌐 [GitHub](https://github.com/manar-Lang) | [LinkedIn](https://www.linkedin.com/in/manar-altyp/)
+🌐 [GitHub](https://github.com/manar-Lang) 
 
 *Project completed for: Retail Data Warehouse ETL Pipeline*  
 *Completion Date: March 2026*
